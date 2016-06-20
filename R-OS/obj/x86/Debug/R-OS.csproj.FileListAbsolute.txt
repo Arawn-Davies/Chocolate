@@ -1,0 +1,15 @@
+c:\users\azama\documents\visual studio 2015\Projects\R-OS\R-OS\bin\Debug\R-OS.dll
+c:\users\azama\documents\visual studio 2015\Projects\R-OS\R-OS\bin\Debug\R-OS.pdb
+c:\users\azama\documents\visual studio 2015\Projects\R-OS\R-OS\bin\Debug\Cosmos.Debug.Kernel.dll
+c:\users\azama\documents\visual studio 2015\Projects\R-OS\R-OS\bin\Debug\Cosmos.System.dll
+c:\users\azama\documents\visual studio 2015\Projects\R-OS\R-OS\bin\Debug\Cosmos.Common.dll
+c:\users\azama\documents\visual studio 2015\Projects\R-OS\R-OS\bin\Debug\Cosmos.HAL.dll
+c:\users\azama\documents\visual studio 2015\Projects\R-OS\R-OS\bin\Debug\Cosmos.Core.dll
+c:\users\azama\documents\visual studio 2015\Projects\R-OS\R-OS\bin\Debug\Cosmos.System.pdb
+c:\users\azama\documents\visual studio 2015\Projects\R-OS\R-OS\bin\Debug\Cosmos.Debug.Kernel.pdb
+c:\users\azama\documents\visual studio 2015\Projects\R-OS\R-OS\bin\Debug\Cosmos.Common.pdb
+c:\users\azama\documents\visual studio 2015\Projects\R-OS\R-OS\bin\Debug\Cosmos.HAL.pdb
+c:\users\azama\documents\visual studio 2015\Projects\R-OS\R-OS\bin\Debug\Cosmos.Core.pdb
+c:\users\azama\documents\visual studio 2015\Projects\R-OS\R-OS\obj\x86\Debug\R-OS.csprojResolveAssemblyReference.cache
+c:\users\azama\documents\visual studio 2015\Projects\R-OS\R-OS\obj\x86\Debug\R-OS.dll
+c:\users\azama\documents\visual studio 2015\Projects\R-OS\R-OS\obj\x86\Debug\R-OS.pdb

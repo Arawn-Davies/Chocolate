@@ -13,3 +13,18 @@ c:\users\azama\documents\visual studio 2015\Projects\R-OS\R-OS\bin\Debug\Cosmos.
 c:\users\azama\documents\visual studio 2015\Projects\R-OS\R-OS\obj\x86\Debug\R-OS.csprojResolveAssemblyReference.cache
 c:\users\azama\documents\visual studio 2015\Projects\R-OS\R-OS\obj\x86\Debug\R-OS.dll
 c:\users\azama\documents\visual studio 2015\Projects\R-OS\R-OS\obj\x86\Debug\R-OS.pdb
+C:\Users\azama\Documents\GitHub\R-OS\R-OS\R-OS\bin\Debug\R-OS.dll
+C:\Users\azama\Documents\GitHub\R-OS\R-OS\R-OS\bin\Debug\R-OS.pdb
+C:\Users\azama\Documents\GitHub\R-OS\R-OS\R-OS\bin\Debug\Cosmos.Debug.Kernel.dll
+C:\Users\azama\Documents\GitHub\R-OS\R-OS\R-OS\bin\Debug\Cosmos.System.dll
+C:\Users\azama\Documents\GitHub\R-OS\R-OS\R-OS\bin\Debug\Cosmos.Common.dll
+C:\Users\azama\Documents\GitHub\R-OS\R-OS\R-OS\bin\Debug\Cosmos.HAL.dll
+C:\Users\azama\Documents\GitHub\R-OS\R-OS\R-OS\bin\Debug\Cosmos.Core.dll
+C:\Users\azama\Documents\GitHub\R-OS\R-OS\R-OS\bin\Debug\Cosmos.System.pdb
+C:\Users\azama\Documents\GitHub\R-OS\R-OS\R-OS\bin\Debug\Cosmos.Debug.Kernel.pdb
+C:\Users\azama\Documents\GitHub\R-OS\R-OS\R-OS\bin\Debug\Cosmos.Common.pdb
+C:\Users\azama\Documents\GitHub\R-OS\R-OS\R-OS\bin\Debug\Cosmos.HAL.pdb
+C:\Users\azama\Documents\GitHub\R-OS\R-OS\R-OS\bin\Debug\Cosmos.Core.pdb
+C:\Users\azama\Documents\GitHub\R-OS\R-OS\R-OS\obj\x86\Debug\R-OS.csprojResolveAssemblyReference.cache
+C:\Users\azama\Documents\GitHub\R-OS\R-OS\R-OS\obj\x86\Debug\R-OS.dll
+C:\Users\azama\Documents\GitHub\R-OS\R-OS\R-OS\obj\x86\Debug\R-OS.pdb

@@ -33,6 +33,22 @@ namespace ROS
                 Console.WriteLine("'help'      --> Displays this help table.");
                 Console.WriteLine("'reboot'    --> Reboots R-OS.");
             }
+            else if (input == "dir")
+            {
+                Console.WriteLine("dir : Coming soon to R-OS!");
+            }
+            else if (seperate(input, 5) == "mkdir")
+            {
+                if (input == "mkdir")
+                {
+                    Console.Write("mkdir takes 1 argument");
+                }
+                else
+                {
+                    var arg = rseperate(input, 6, (input.Length - 1));
+                    System.IO.Directory.CreateDirectory(arg);
+                }
+            }
             else if (input == "reboot")
             {
                 Sys.Power.Reboot();

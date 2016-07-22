@@ -98,7 +98,7 @@
     <Reference Include="Cosmos.Debug.Kernel.Plugs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5ae71220097cb983" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CosmosKernel11\Chocolate.Kernel.csproj">
+    <ProjectReference Include="..\Chocolate.Kernel\Chocolate.Kernel.csproj">
       <Name>Chocolate.Kernel</Name>
       <Project>{e6c0ef5f-ef6f-416b-ac26-ccd9fea61cc2}</Project>
       <Private>True</Private>

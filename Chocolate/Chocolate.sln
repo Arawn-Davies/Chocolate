@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chocolate.Hardware", "ChocolateHardware\Chocolate.Hardware.csproj", "{DE87FFF7-35B5-4D27-8885-161EFFEF6B3B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chocolate.SystemRing", "Chocolate.System\Chocolate.SystemRing.csproj", "{02157173-C158-4247-95C8-D5511CA5245C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chocolate.Kernel", "Chocolate.Kernel\Chocolate.Kernel.csproj", "{E6C0EF5F-EF6F-416B-AC26-CCD9FEA61CC2}"
+EndProject
+Project("{471EC4BB-E47E-4229-A789-D1F5F83B52D4}") = "ChocolateBoot", "Chocolate\ChocolateBoot.Cosmos", "{8A40CF06-8CED-43D6-BF10-BA4BC6B3D08E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DE87FFF7-35B5-4D27-8885-161EFFEF6B3B}.Debug|x86.ActiveCfg = Debug|x86
+		{DE87FFF7-35B5-4D27-8885-161EFFEF6B3B}.Debug|x86.Build.0 = Debug|x86
+		{DE87FFF7-35B5-4D27-8885-161EFFEF6B3B}.Release|x86.ActiveCfg = Release|x86
+		{DE87FFF7-35B5-4D27-8885-161EFFEF6B3B}.Release|x86.Build.0 = Release|x86
+		{02157173-C158-4247-95C8-D5511CA5245C}.Debug|x86.ActiveCfg = Debug|x86
+		{02157173-C158-4247-95C8-D5511CA5245C}.Debug|x86.Build.0 = Debug|x86
+		{02157173-C158-4247-95C8-D5511CA5245C}.Release|x86.ActiveCfg = Release|x86
+		{02157173-C158-4247-95C8-D5511CA5245C}.Release|x86.Build.0 = Release|x86
+		{E6C0EF5F-EF6F-416B-AC26-CCD9FEA61CC2}.Debug|x86.ActiveCfg = Debug|x86
+		{E6C0EF5F-EF6F-416B-AC26-CCD9FEA61CC2}.Debug|x86.Build.0 = Debug|x86
+		{E6C0EF5F-EF6F-416B-AC26-CCD9FEA61CC2}.Release|x86.ActiveCfg = Release|x86
+		{E6C0EF5F-EF6F-416B-AC26-CCD9FEA61CC2}.Release|x86.Build.0 = Release|x86
+		{8A40CF06-8CED-43D6-BF10-BA4BC6B3D08E}.Debug|x86.ActiveCfg = Debug|x86
+		{8A40CF06-8CED-43D6-BF10-BA4BC6B3D08E}.Debug|x86.Build.0 = Debug|x86
+		{8A40CF06-8CED-43D6-BF10-BA4BC6B3D08E}.Release|x86.ActiveCfg = Debug|x86
+		{8A40CF06-8CED-43D6-BF10-BA4BC6B3D08E}.Release|x86.Build.0 = Debug|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

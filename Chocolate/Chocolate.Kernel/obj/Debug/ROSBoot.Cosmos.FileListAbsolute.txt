@@ -1,0 +1,1 @@
+C:\Users\azama\Documents\GitHub\ROS\ROS\CosmosKernel11\obj\Debug\ROSBoot.CosmosResolveAssemblyReference.cache

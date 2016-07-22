@@ -1,0 +1,32 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Chocolate;
+
+namespace Chocolate.Applications
+{
+    class Help
+    {
+        public static void help()
+        {
+            if (osvars.livesession == true)
+            {
+                Console.WriteLine("'echo' args  --> Prints the specified text onto the console.");
+                Console.WriteLine("'help'       --> Displays this help table.");
+                Console.WriteLine("'reboot'     --> Reboots Chocolate.");
+            }
+            else if (osvars.livesession == false)
+            {
+                Console.WriteLine("'echo' args  --> Prints the specified text onto the console.");
+                Console.WriteLine("'help'       --> Displays this help table.");
+                Console.WriteLine("'reboot'     --> Reboots Chocolate");
+                Console.WriteLine("'dir'        --> Prints a list of folders in the current directory");
+                Console.WriteLine("'mkdir' args --> Creates a new directory with the specified name");
+                Console.WriteLine("'ls'         --> Prints a list of files in the current directory");
+                Console.WriteLine("'cd' args    --> Enters the specified directory");
+            }
+        }
+    }
+}

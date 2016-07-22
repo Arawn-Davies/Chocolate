@@ -1,13 +1,14 @@
-# R-OS
+# Chocolate
 
-##Welcome to R-OS, a new operating system created using the Cosmos Operating System toolkit.
+##Welcome to Chocolate, a new operating system created by CaveSponge using the Cosmos Operating System toolkit.
 
-###Currently R-OS has support for the following:
+###Currently Chocolate has the following:
 
+Error Handling
 FAT File System
-Basic ACPI (Reboot, Shutdown)
+Simple Terminal/Shell
+
 
 ###I am working on:
 
-Executable Files
 Text file editing

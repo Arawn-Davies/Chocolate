@@ -1,2 +1,0 @@
-c:\users\azama\documents\visual studio 2015\Projects\R-OS\R-OS\obj\Debug\R-OSBoot.CosmosResolveAssemblyReference.cache
-C:\Users\azama\Documents\GitHub\R-OS\R-OS\R-OS\obj\Debug\R-OSBoot.CosmosResolveAssemblyReference.cache

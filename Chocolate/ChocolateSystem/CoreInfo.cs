@@ -14,7 +14,7 @@ namespace Chocolate.SystemRing
         {
             Console.WriteLine($@"System Info:
 :Number of FAT Partitions: {Sys.FileSystem.VFS.VFSManager.GetVolumes().Count}
-:Current date and time is: {SystemRing.SystemInfo.Time.ToString()}");
+:Current date and time is: {SystemInfo.Time.ToString()}");
         }
     }
     public class DateTime

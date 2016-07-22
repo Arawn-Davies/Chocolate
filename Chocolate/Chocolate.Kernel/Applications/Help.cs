@@ -11,21 +11,30 @@ namespace Chocolate.Applications
     {
         public static void help()
         {
-            if (osvars.livesession == true)
+            Console.Clear();
+            Console.WriteLine("'echo' args  --> Prints the specified text onto the console.");
+            Console.WriteLine("'help'       --> Displays this help table.");
+            Console.WriteLine("'reboot'     --> Reboots Chocolate.");
+            Console.WriteLine("'cls'        --> Clears the screen.");
+            Console.WriteLine("'ssfc' args   --> Sets the screen foreground color");
+            Console.WriteLine("'ssbc' args   --> Sets the screen background color");
+            Console.WriteLine("Enter lowercase: Possible colors are :");
+            const string ccolors = @"
+black, blue, cyan, darkblue, darkcyan, darkgray
+darkgreen, darkmagenta, darkred, darkyellow
+gray, green, magenta, red, white, yellow";
+            Console.WriteLine(ccolors);
+            Console.WriteLine();
+            if (Terminal.current_user != "liveuser")
             {
-                Console.WriteLine("'echo' args  --> Prints the specified text onto the console.");
-                Console.WriteLine("'help'       --> Displays this help table.");
-                Console.WriteLine("'reboot'     --> Reboots Chocolate.");
+                Console.WriteLine("'dir'        --> Prints a list of folders in the current directory.");
+                Console.WriteLine("'mkdir' args --> Creates a new directory with the specified name.");
+                Console.WriteLine("'ls'         --> Prints a list of files in the current directory.");
+                Console.WriteLine("'cd' args    --> Enters the specified directory.");
             }
-            else if (osvars.livesession == false)
+            else
             {
-                Console.WriteLine("'echo' args  --> Prints the specified text onto the console.");
-                Console.WriteLine("'help'       --> Displays this help table.");
-                Console.WriteLine("'reboot'     --> Reboots Chocolate");
-                Console.WriteLine("'dir'        --> Prints a list of folders in the current directory");
-                Console.WriteLine("'mkdir' args --> Creates a new directory with the specified name");
-                Console.WriteLine("'ls'         --> Prints a list of files in the current directory");
-                Console.WriteLine("'cd' args    --> Enters the specified directory");
+                //Proceed
             }
         }
     }

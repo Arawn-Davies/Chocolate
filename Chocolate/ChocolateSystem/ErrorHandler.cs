@@ -9,8 +9,8 @@ namespace Chocolate.SystemRing
 {
     public class ErrorHandler
     {
-        public static string message = "";
-        public static string specific = "";
+        public static string message;
+        public static string specific;
         public static void SpitOut()
         {
             const string errmsg = @"
@@ -25,11 +25,18 @@ _________________________________
         }
         public static void Warning(int warnlevel, string type)
         {
-            
+
             if (warnlevel == 1)
             {
                 message = "No Permission rights";
-                specific = "The currently logged in user is\nunable to perform this action.";
+                if (type == "oud")
+                {
+                    specific = "This is another users home directory.";
+                }
+                else
+                {
+                    specific = "The currently logged in user is\nunable to perform this action.";
+                }
             }
             else if (warnlevel == 2)
             {
@@ -40,7 +47,8 @@ _________________________________
                 }
                 else if (type == "live")
                 {
-                    specific = "You are running Chocolate as a Live user\nFileSystem Commands are disabled.";
+                    specific = "Live User";
+
                 }
             }
             else if (warnlevel == 3)

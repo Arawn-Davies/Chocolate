@@ -11,7 +11,7 @@ using Chocolate.SystemRing;
 namespace Chocolate
 {
 
-    class Terminal
+    public class Terminal
     {
         #region Init
         public static void Init()
@@ -20,13 +20,13 @@ namespace Chocolate
             var FileSys = new Sys.FileSystem.CosmosVFS();
             Sys.FileSystem.VFS.VFSManager.RegisterVFS(FileSys);
             FileSys.Initialize();
-            SystemRing.GetCoreInfo.CoreInfo();
+            GetCoreInfo.CoreInfo();
             Console.WriteLine("Filesystems Initialized.");
             Console.WriteLine("System dir separator: " + Sys.FileSystem.VFS.VFSManager.GetDirectorySeparatorChar());
             if (!Directory.Exists(@"0:\"))
             {
                 osvars.livesession = true;
-                SystemRing.ErrorHandler.Warning(2, "fsnf");
+                ErrorHandler.Warning(2, "fsnf");
                 Console.WriteLine("Chocolate could not find a valid FAT Filesystem on your main hard drive.");
                 Console.WriteLine("Some Applications may not work, so for full functionality");
                 Console.WriteLine("use a hard drive partition tool to create one.");
@@ -34,13 +34,26 @@ namespace Chocolate
             }
             else
             {
-                osvars.livesession = false;
-               
+                Console.WriteLine("Chocolate has detected a FAT FileSystem.");
+                Console.WriteLine("You now have the choice to run Chocolate as a Live user or a fully featured user.");
+                Console.WriteLine("Live users are only good for debugging purposes.");
+                Console.WriteLine("Do you wish to run as a full user?");
+                string uclive = Console.ReadLine();
+                if (uclive == "yes")
+                {
+                    osvars.livesession = false;
+                }
+                else if (uclive == "no")
+                {
+                    osvars.livesession = true;
+                    current_user = "liveuser";
+                }
             }
         }
         #endregion
+        #region strings and bools
         public static string current_user;
-        public static Cosmos.System.FileSystem.CosmosVFS FileSys = null;
+        public static Sys.FileSystem.CosmosVFS FileSys = null;
         public static bool folder_exists(string path)
         {
             bool val = false;
@@ -53,17 +66,26 @@ namespace Chocolate
             }
             return val;
         }
-        public static string current_directory = "0:\\";
+        
+        public static string root_directory = @"0:\";
+        public static string usrs_dir = root_directory + "usr";
+        public static string user_directory = usrs_dir + @"\" + current_user;
+        public static string current_directory = user_directory;
+        #endregion
+
         public static void Setup()
         {
             Init();
-            if (osvars.livesession == true)
+            if (current_user == "default")
             {
-                current_user = "liveuser";
+                Terminal.current_user = "default";
             }
-            else
+            else if(osvars.livesession == false)
             {
-                current_user = "default";
+                UsrMgmt.CheckUser();
+            }
+            else if (osvars.livesession == true)
+            {
 
             }
             AdvConsole.Clear();
@@ -77,27 +99,38 @@ namespace Chocolate
         }
         public static void Start()
         {
-            
-            Console.Write(current_user + "@chocolate" + " " + current_directory + " $");
+            Console.Write(current_user + "@chocolate" + " " + current_directory + "  $");
             string input = Console.ReadLine();
             SendCommand(input);
             Start();
-
         }
         public static void SendCommand(string input)
         {
-            string lower = input.ToLower();
-            string[] args = input.Split(' ');
+            var lower = input.ToLower();
+            #region corecommands
             if (lower == "reboot")
             {
                 AdvConsole.WriteLine("The system is going down for reboot NOW");
                 Sys.Power.Reboot();
             }
-            else if (lower.StartsWith("help"))
+            else if (lower == "help")
             {
                 Applications.Help.help();
             }
-            if (lower.StartsWith("cd "))
+            else if (lower == "cls")
+            {
+                Console.Clear();
+            }
+            else if (lower.StartsWith("ssfc "))
+            {
+                Applications.ColorChanger.ChangeFGC(lower.Remove(0, 5));
+            }
+            else if (lower.StartsWith("ssbc "))
+            {
+                Applications.ColorChanger.ChangeBGC(lower.Remove(0, 5));
+            }
+            #endregion
+            else if (lower.StartsWith("cd "))
             {
                 #region CD
                 if (osvars.livesession == true)
@@ -110,8 +143,13 @@ namespace Chocolate
                     if (arg == "..")
                     {
                         var cdir = FileSys.GetDirectory(current_directory);
-                        string pdir = cdir.mParent.mName;
-                        if (!string.IsNullOrEmpty(pdir))
+                        var pdir = cdir.mParent.mName;
+                        if (cdir == FileSys.GetDirectory(root_directory))
+                        {
+                            Console.WriteLine("You are currently in the root directory.");
+                            Console.WriteLine("You cannot perform this operation in the root directory.");
+                        }
+                        else
                         {
                             current_directory = pdir;
                         }
@@ -137,7 +175,7 @@ namespace Chocolate
                 #region cocoaview
                 if (osvars.livesession == true)
                 {
-
+                    ErrorHandler.Warning(2, "live");
                 }
                 else
                 {
@@ -149,6 +187,7 @@ namespace Chocolate
                     else
                     {
                         Console.WriteLine("cocoaview: File Does not exist");
+                        ErrorHandler.Warning(2, "fsnf");
                     }
                 }
                 #endregion
@@ -158,15 +197,22 @@ namespace Chocolate
                 #region DIR
                 if (osvars.livesession == true)
                 {
-
+                    ErrorHandler.Warning(2, "live");
                 }
                 else
                 {
-                    string[] folders = Directory.GetDirectories(current_directory);
-
-                    foreach (var folder in folders)
+                    if (Directory.Exists(current_directory + "*"))
                     {
-                        Console.WriteLine(folder);
+                        string[] folders = Directory.GetDirectories(current_directory);
+
+                        foreach (var folder in folders)
+                        {
+                            Console.WriteLine(folder);
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("No Folders exist!");
                     }
                 }
                 #endregion
@@ -194,12 +240,21 @@ namespace Chocolate
             }
             else if (lower.StartsWith("ls"))
             {
-                string[] files = Directory.GetFiles(current_directory);
-
-                foreach (var file in files)
+                #region ls
+                if (osvars.livesession == true)
                 {
-                    Console.WriteLine(file);
+                    ErrorHandler.Warning(2, "live");
                 }
+                else
+                {
+                    string[] files = Directory.GetFiles(current_directory);
+
+                    foreach (var file in files)
+                    {
+                        Console.WriteLine(file);
+                    }
+                }
+                #endregion
             }
             else if (lower.StartsWith("echo"))
             {

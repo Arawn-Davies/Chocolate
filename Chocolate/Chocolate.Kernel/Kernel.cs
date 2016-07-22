@@ -10,9 +10,9 @@ namespace Chocolate
     
     public class osvars
     {
-        public static bool livesession;
-        const string osver = "Beta 5.0";
-        const string osname = "Echo";
+        public static bool livesession = false;
+        public const string osver = "Beta 2.5.1";
+        public const string osname = "Foxtrot";
         public const string oslogo = @"
 ________________________________________
     ___ _               _      _       
@@ -30,14 +30,18 @@ ________________________________________
         protected override void BeforeRun()
         {
             Console.Clear();
-            AdvConsole.WriteLineEx("Welcome to", ConsoleColor.White, ConsoleColor.Blue, true, true);
-            AdvConsole.WriteLineEx(osvars.oslogo, ConsoleColor.White, ConsoleColor.Blue, true, true);
+            AdvConsole.WriteEx("Welcome to\n" + osvars.oslogo, ConsoleColor.White, ConsoleColor.Blue, true, true);
+            Console.CursorLeft = (Console.WindowWidth - osvars.oslogo.Length) / 2;
+            Console.CursorTop = Console.WindowHeight / 2;
+            Console.Write(osvars.oslogo);
+            Console.WriteLine(osvars.osver + ", " + osvars.osname);
             Console.WriteLine("Press any key to continue!");
         }
         
         protected override void Run()
         {
             Console.ReadKey(true);
+            Console.Clear();
             Terminal.Setup();
         }
     }

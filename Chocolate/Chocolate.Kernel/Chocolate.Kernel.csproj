@@ -47,20 +47,22 @@
     <Reference Include="Cosmos.Debug.Kernel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5ae71220097cb983, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Applications\ColorChanger.cs" />
     <Compile Include="Applications\Help.cs" />
     <Compile Include="Kernel.cs" />
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="Terminal.cs" />
     <Compile Include="Shell.cs" />
+    <Compile Include="UsrMgmt.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Chocolate.System\Chocolate.SystemRing.csproj">
+    <ProjectReference Include="..\ChocolateHardware\Chocolate.HardwareRing.csproj">
+      <Project>{de87fff7-35b5-4d27-8885-161effef6b3b}</Project>
+      <Name>Chocolate.HardwareRing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ChocolateSystem\Chocolate.SystemRing.csproj">
       <Project>{02157173-c158-4247-95c8-d5511ca5245c}</Project>
       <Name>Chocolate.SystemRing</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ChocolateHardware\Chocolate.Hardware.csproj">
-      <Project>{de87fff7-35b5-4d27-8885-161effef6b3b}</Project>
-      <Name>Chocolate.Hardware</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

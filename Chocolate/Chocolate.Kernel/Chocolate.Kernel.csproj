@@ -47,8 +47,12 @@
     <Reference Include="Cosmos.Debug.Kernel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5ae71220097cb983, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Applications\CocoaScript.cs" />
     <Compile Include="Applications\ColorChanger.cs" />
+    <Compile Include="Applications\cpedit.cs" />
+    <Compile Include="Applications\cpview.cs" />
     <Compile Include="Applications\Help.cs" />
+    <Compile Include="Applications\Cocoashell.cs" />
     <Compile Include="Kernel.cs" />
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="Terminal.cs" />

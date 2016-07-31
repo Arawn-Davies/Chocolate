@@ -1,0 +1,18 @@
+c:\users\azama\documents\visual studio 2015\Projects\CocoaShell\CocoaShell\bin\Debug\CocoaShell.exe.config
+c:\users\azama\documents\visual studio 2015\Projects\CocoaShell\CocoaShell\bin\Debug\CocoaShell.exe
+c:\users\azama\documents\visual studio 2015\Projects\CocoaShell\CocoaShell\bin\Debug\CocoaShell.pdb
+c:\users\azama\documents\visual studio 2015\Projects\CocoaShell\CocoaShell\obj\Debug\CocoaShell.csprojResolveAssemblyReference.cache
+c:\users\azama\documents\visual studio 2015\Projects\CocoaShell\CocoaShell\obj\Debug\CocoaShell.exe
+c:\users\azama\documents\visual studio 2015\Projects\CocoaShell\CocoaShell\obj\Debug\CocoaShell.pdb
+C:\Users\azama\Documents\GitHub\CocoaShell\CocoaShell\CocoaShell\bin\Debug\CocoaShell.exe.config
+C:\Users\azama\Documents\GitHub\CocoaShell\CocoaShell\CocoaShell\obj\Debug\CocoaShell.exe
+C:\Users\azama\Documents\GitHub\CocoaShell\CocoaShell\CocoaShell\obj\Debug\CocoaShell.pdb
+C:\Users\azama\Documents\GitHub\CocoaShell\CocoaShell\CocoaShell\bin\Debug\CocoaShell.exe
+C:\Users\azama\Documents\GitHub\CocoaShell\CocoaShell\CocoaShell\bin\Debug\CocoaShell.pdb
+C:\Users\azama\Documents\GitHub\CocoaShell\CocoaShell\CocoaShell\obj\Debug\CocoaShell.csprojResolveAssemblyReference.cache
+C:\Users\azama\Documents\GitHub\Chocolate\Chocolate\CocoaShell\obj\Debug\CocoaShell.csprojResolveAssemblyReference.cache
+C:\Users\azama\Documents\GitHub\Chocolate\Chocolate\CocoaShell\obj\Debug\CocoaShell.pdb
+C:\Users\azama\Documents\GitHub\Chocolate\Chocolate\CocoaShell\bin\Debug\CocoaShell.dll.config
+C:\Users\azama\Documents\GitHub\Chocolate\Chocolate\CocoaShell\bin\Debug\CocoaShell.dll
+C:\Users\azama\Documents\GitHub\Chocolate\Chocolate\CocoaShell\bin\Debug\CocoaShell.pdb
+C:\Users\azama\Documents\GitHub\Chocolate\Chocolate\CocoaShell\obj\Debug\CocoaShell.dll

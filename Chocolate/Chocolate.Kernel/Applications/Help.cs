@@ -16,8 +16,8 @@ namespace Chocolate.Applications
             Console.WriteLine("'help'       --> Displays this help table.");
             Console.WriteLine("'reboot'     --> Reboots Chocolate.");
             Console.WriteLine("'cls'        --> Clears the screen.");
-            Console.WriteLine("'ssfc' args   --> Sets the screen foreground color");
-            Console.WriteLine("'ssbc' args   --> Sets the screen background color");
+            Console.WriteLine("'sfgc' args   --> Sets the screen foreground color");
+            Console.WriteLine("'sbgc' args   --> Sets the screen background color");
             Console.WriteLine("Enter lowercase: Possible colors are :");
             const string ccolors = @"
 black, blue, cyan, darkblue, darkcyan, darkgray

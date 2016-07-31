@@ -67,7 +67,7 @@ namespace Chocolate
             return val;
         }
         
-        public static string root_directory = @"0:\";
+        public const string root_directory = @"0:\";
         public static string usrs_dir = root_directory + "usr";
         public static string user_directory = usrs_dir + @"\" + current_user;
         public static string current_directory = user_directory;
@@ -95,6 +95,7 @@ namespace Chocolate
             AdvConsole.Clear();
             Console.WriteLine("Welcome to Chocolate!");
             Console.WriteLine("Use 'help' to see a list of commands.");
+            Kernel.FullInit();
             Start();
         }
         public static void Start()
@@ -113,6 +114,10 @@ namespace Chocolate
                 AdvConsole.WriteLine("The system is going down for reboot NOW");
                 Sys.Power.Reboot();
             }
+            if (lower == "cocoashell")
+            {
+                CocoaShell.Cocoashell.Run();
+            }
             else if (lower == "help")
             {
                 Applications.Help.help();
@@ -121,164 +126,180 @@ namespace Chocolate
             {
                 Console.Clear();
             }
-            else if (lower.StartsWith("ssfc "))
+            else if (lower.StartsWith("sfgc "))
             {
                 Applications.ColorChanger.ChangeFGC(lower.Remove(0, 5));
             }
-            else if (lower.StartsWith("ssbc "))
+            else if (lower.StartsWith("sbgc "))
             {
                 Applications.ColorChanger.ChangeBGC(lower.Remove(0, 5));
             }
             #endregion
-            else if (lower.StartsWith("cd "))
-            {
-                #region CD
-                if (osvars.livesession == true)
-                {
-                    Chocolate.SystemRing.ErrorHandler.Warning(2, "live");
-                }
-                else
-                {
-                    string arg = input.Remove(0, 3);
-                    if (arg == "..")
-                    {
-                        var cdir = FileSys.GetDirectory(current_directory);
-                        var pdir = cdir.mParent.mName;
-                        if (cdir == FileSys.GetDirectory(root_directory))
-                        {
-                            Console.WriteLine("You are currently in the root directory.");
-                            Console.WriteLine("You cannot perform this operation in the root directory.");
-                        }
-                        else
-                        {
-                            current_directory = pdir;
-                        }
-                    }
-                    else if (folder_exists(arg))
-                    {
-                        Directory.SetCurrentDirectory(current_directory);
-                        current_directory = current_directory + arg;
-                    }
-                    else if (!folder_exists(arg))
-                    {
-                        Console.WriteLine("Directory: " + arg + " : does not exist");
-                    }
-                    else
-                    {
-                        Console.WriteLine(current_directory);
-                    }
-                }
-                #endregion 
-            }
-            else if (lower.StartsWith("cocoaview "))
-            {
-                #region cocoaview
-                if (osvars.livesession == true)
-                {
-                    ErrorHandler.Warning(2, "live");
-                }
-                else
-                {
-                    string fname = input.Remove(0, 10);
-                    if (File.Exists(current_directory + fname))
-                    {
-                        Console.WriteLine(File.ReadAllText(current_directory + fname));
-                    }
-                    else
-                    {
-                        Console.WriteLine("cocoaview: File Does not exist");
-                        ErrorHandler.Warning(2, "fsnf");
-                    }
-                }
-                #endregion
-            }
-            else if (lower.StartsWith("dir"))
-            {
-                #region DIR
-                if (osvars.livesession == true)
-                {
-                    ErrorHandler.Warning(2, "live");
-                }
-                else
-                {
-                    if (Directory.Exists(current_directory + "*"))
-                    {
-                        string[] folders = Directory.GetDirectories(current_directory);
+#region CD
+/*
+else if (lower.StartsWith("cd "))
+{
 
-                        foreach (var folder in folders)
-                        {
-                            Console.WriteLine(folder);
-                        }
-                    }
-                    else
-                    {
-                        Console.WriteLine("No Folders exist!");
-                    }
-                }
-                #endregion
-            }
-            else if (lower.StartsWith("mkdir "))
-            {
-                #region mkdir
-                if (osvars.livesession == true)
-                {
-                    ErrorHandler.Warning(2, "live");
-                }
-                else
-                {
-                    string dirname = input.Remove(0, 6);
-                    if (Directory.Exists(current_directory + dirname))
-                    {
-                        Console.WriteLine("Directory already exists:");
-                    }
-                    else
-                    {
-                        Directory.CreateDirectory(current_directory + dirname);
-                    }
-                }
-                #endregion
-            }
-            else if (lower.StartsWith("ls"))
-            {
-                #region ls
-                if (osvars.livesession == true)
-                {
-                    ErrorHandler.Warning(2, "live");
-                }
-                else
-                {
-                    string[] files = Directory.GetFiles(current_directory);
 
-                    foreach (var file in files)
-                    {
-                        Console.WriteLine(file);
-                    }
-                }
-                #endregion
-            }
-            else if (lower.StartsWith("echo"))
+    if (osvars.livesession == true)
+    {
+        Chocolate.SystemRing.ErrorHandler.Warning(2, "live");
+    }
+    else
+    {
+        string arg = input.Remove(0, 3);
+        if (arg == "..")
+        {
+            var cdir = FileSys.GetDirectory(current_directory);
+            var pdir = cdir.mParent.mName;
+            if (cdir == FileSys.GetDirectory(root_directory))
             {
-                #region echo
-                try
-                {
-                    Console.WriteLine(input.Remove(0, 5));
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("echo: " + ex.Message);
-                }
-                #endregion
-            }
-            #region shellextras
-            else if (lower == "")
-            {
+                Console.WriteLine("You are currently in the root directory.");
+                Console.WriteLine("You cannot perform this operation in the root directory.");
             }
             else
             {
-                Console.WriteLine("Error: " + lower + " is not a recognised command, please see the help command.");
+                cdir = pdir;
+                current_directory = pdir;
             }
-            #endregion
         }
-
+        else if (folder_exists(arg))
+        {
+            Directory.SetCurrentDirectory(current_directory);
+            current_directory = current_directory + arg;
+        }
+        else if (!folder_exists(arg))
+        {
+            Console.WriteLine("Directory: " + arg + " : does not exist");
+        }
+        else
+        {
+            Console.WriteLine(current_directory);
+        }
     }
+
+}*/
+ #endregion
+else if (lower.StartsWith("cocoaview "))
+{
+    #region cocoaview
+    if (osvars.livesession == true)
+    {
+        ErrorHandler.Warning(2, "live");
+    }
+    else
+    {
+        string fname = input.Remove(0, 10);
+        if (File.Exists(current_directory + fname))
+        {
+            Console.WriteLine(File.ReadAllText(current_directory + fname));
+        }
+        else
+        {
+            Console.WriteLine("cocoaview: File Does not exist");
+            ErrorHandler.Warning(2, "fsnf");
+        }
+    }
+    #endregion
+}
+else if (lower.StartsWith("dir"))
+{
+    #region DIR
+    if (osvars.livesession == true)
+    {
+        ErrorHandler.Warning(2, "live");
+    }
+    else
+    {
+                    Console.WriteLine("Item Type\tTitle");
+                    foreach (var dir in Directory.GetDirectories(current_directory))
+                    {
+                        try
+                        {
+                            Console.WriteLine("<Directory>\t" + dir);
+                        }
+                        catch
+                        {
+
+                        }
+                    }
+                    foreach (var dir in Directory.GetFiles(current_directory))
+                    {
+                        try
+                        {
+                            string[] sp = dir.Split(new[] { "." }, StringSplitOptions.RemoveEmptyEntries);
+                            Console.WriteLine(sp[sp.Length - 1] + "\t" + dir);
+                        }
+                        catch
+                        {
+
+                        }
+                    }
+                }
+    #endregion
+}
+else if (lower.StartsWith("mkdir "))
+{
+    #region mkdir
+    if (osvars.livesession == true)
+    {
+        ErrorHandler.Warning(2, "live");
+    }
+    else
+    {
+        string dirname = input.Remove(0, 6);
+        if (Directory.Exists(current_directory + dirname))
+        {
+            Console.WriteLine("Directory already exists:");
+        }
+        else
+        {
+            Directory.CreateDirectory(current_directory + dirname);
+        }
+    }
+    #endregion
+}
+else if (lower.StartsWith("ls"))
+{
+    #region ls
+    if (osvars.livesession == true)
+    {
+        ErrorHandler.Warning(2, "live");
+    }
+    else
+    {
+        string[] files = Directory.GetFiles(current_directory);
+
+        foreach (var file in files)
+        {
+            Console.WriteLine(file);
+        }
+    }
+    #endregion
+}
+else if (lower.StartsWith("echo"))
+{
+    #region echo
+    try
+    {
+        Console.WriteLine(input.Remove(0, 5));
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine("echo: " + ex.Message);
+    }
+    #endregion
+}
+#region shellextras
+else if (lower == "")
+{
+}
+else
+{
+    Console.WriteLine("Error: " + lower + " is not a recognised command, please see the help command.");
+}
+#endregion
+}
+
+}
 }

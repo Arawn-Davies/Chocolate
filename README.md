@@ -4,11 +4,14 @@
 
 ###Currently Chocolate has the following:
 
-Error Handling
-FAT File System
-Simple Terminal/Shell
+*Error Handling
+*FAT File System
+*Simple Terminal/Shell
+*Text Editor
+*Text Viewer
+*Basic Shell Scripting
 
 
 ###I am working on:
 
-Text file editing
+*Shell Scripting

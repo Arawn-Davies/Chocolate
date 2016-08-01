@@ -12,7 +12,7 @@ The text editor can currently view .TXT and .CCS files, .CCS being the extension
 Once logged into the terminal use the command 'cocoashell' to launch cocoashell
 where you can then use 'help' to see the cocoashell specific commands.
 
-You can visit [http://github.com/CaveSponge/Cocoashell] to see the Cocoashell source
+You can visit http://github.com/CaveSponge/Cocoashell to see the Cocoashell source
 
 ###Currently Chocolate has the following:
 

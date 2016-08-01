@@ -35,6 +35,7 @@ namespace CocoaShell
             if (cmd == "exit")
             {
                 isscript = false;
+                Chocolate.Terminal.Start();
             }
             if (cmd.StartsWith("cpedit "))
             {
@@ -48,13 +49,13 @@ namespace CocoaShell
             {
                 cpview.Run();
             }
-            /*
+            
             else if (cmd.StartsWith("cocoascript "))
             {
                 isscript = true;
                 CocoaScript.Execute(cmd.Remove(0, 12));
             }
-            */
+            
             else if (cmd.StartsWith("echo "))
             {
                 try

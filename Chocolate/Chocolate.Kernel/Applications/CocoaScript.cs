@@ -1,10 +1,11 @@
-﻿/* 
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using Chocolate;
 
 namespace CocoaShell
 {
@@ -14,7 +15,8 @@ namespace CocoaShell
         {
             if (scriptname.EndsWith(".cscript"))
             {
-                foreach (string line in File.ReadLines(@"C:/Users/azama/Desktop/" + scriptname))
+                string[] lines = File.ReadAllLines(Terminal.current_directory + scriptname);
+                foreach (string line in lines)
                 {
                     Cocoashell.SendCMD(line);
                 }
@@ -28,4 +30,3 @@ namespace CocoaShell
         }
     }
 }
-*/

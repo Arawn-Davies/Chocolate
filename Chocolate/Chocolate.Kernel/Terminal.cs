@@ -79,6 +79,7 @@ namespace Chocolate
             if (current_user == "default")
             {
                 Terminal.current_user = "default";
+                osvars.livesession = false;
             }
             else if(osvars.livesession == false)
             {
@@ -120,7 +121,11 @@ namespace Chocolate
             }
             else if (lower == "help")
             {
-                Applications.Help.help();
+                Applications.Help.fullhelp();
+            }
+            else if (lower.StartsWith("help "))
+            {
+                Applications.Help.Specific(lower.Remove(0, 5));
             }
             else if (lower == "cls")
             {

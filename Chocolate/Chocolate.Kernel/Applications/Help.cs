@@ -9,7 +9,11 @@ namespace Chocolate.Applications
 {
     class Help
     {
-        public static void help()
+        public static void Specific(string topic)
+        {
+
+        }
+        public static void fullhelp()
         {
             Console.Clear();
             Console.WriteLine("'echo' args  --> Prints the specified text onto the console.");

@@ -49,7 +49,7 @@ namespace CocoaShell
                 {
                     File.WriteAllText(Terminal.current_directory + file, text);
                     cpedit.textSVG = cpedit.text;
-                    break;
+                    Cocoashell.Run();
                 }
                 cpedit.text = cpedit.text + (Environment.NewLine + line);
             }

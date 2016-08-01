@@ -23,6 +23,7 @@ namespace Chocolate
             GetCoreInfo.CoreInfo();
             Console.WriteLine("Filesystems Initialized.");
             Console.WriteLine("System dir separator: " + Sys.FileSystem.VFS.VFSManager.GetDirectorySeparatorChar());
+            Console.Clear();
             if (!Directory.Exists(@"0:\"))
             {
                 osvars.livesession = true;
@@ -41,6 +42,10 @@ namespace Chocolate
                 string uclive = Console.ReadLine();
                 if (uclive == "yes")
                 {
+                    if (!Directory.Exists(usrs_dir))
+                    {
+                        Directory.CreateDirectory(usrs_dir);
+                    }
                     osvars.livesession = false;
                 }
                 else if (uclive == "no")
@@ -69,19 +74,14 @@ namespace Chocolate
         
         public const string root_directory = @"0:\";
         public static string usrs_dir = root_directory + "usr";
-        public static string user_directory = usrs_dir + @"\" + current_user;
+        public static string user_directory = usrs_dir + current_user;
         public static string current_directory = user_directory;
         #endregion
 
         public static void Setup()
         {
             Init();
-            if (current_user == "default")
-            {
-                Terminal.current_user = "default";
-                osvars.livesession = false;
-            }
-            else if(osvars.livesession == false)
+            if(osvars.livesession == false)
             {
                 UsrMgmt.CheckUser();
             }
@@ -96,14 +96,23 @@ namespace Chocolate
             AdvConsole.Clear();
             Console.WriteLine("Welcome to Chocolate!");
             Console.WriteLine("Use 'help' to see a list of commands.");
-            Kernel.FullInit();
             Start();
         }
         public static void Start()
         {
-            Console.Write(current_user + "@chocolate" + " " + current_directory + "  $");
-            string input = Console.ReadLine();
-            SendCommand(input);
+            Console.Write(current_user + "@chocolate" + " $");
+            try
+            {
+                string input = Console.ReadLine();
+                SendCommand(input);
+                Cosmos.Debug.Kernel.Plugs.Debugger.DoSend("whats going on");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.ReadKey(true);
+            }
+
             Start();
         }
         public static void SendCommand(string input)

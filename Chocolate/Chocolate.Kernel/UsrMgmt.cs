@@ -20,7 +20,7 @@ namespace Chocolate
             Console.Write("     Done!");
             Console.ForegroundColor = ConsoleColor.White;
             Terminal.current_user = usrname;
-            Console.WriteLine("Press any key to continue...");
+            Console.WriteLine("\nPress any key to continue...");
             Console.ReadKey(true);
         }
         public static void PermCheck()
@@ -37,14 +37,10 @@ namespace Chocolate
         public static void CheckUser()
         {
             Console.Clear();
-            Console.CursorLeft = 7;
-            AdvConsole.Fill(ConsoleColor.Gray);
-            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("User Logon:");
             Console.CursorTop = 5;
-            Console.CursorLeft = 1;
             Console.WriteLine("You can either log in as an existing user or create a new one.\n");
-            Console.WriteLine("Either type the new/existing username or type 'default' to log in anyway. >");
+            Console.Write(">");
             string usrlogon = Console.ReadLine();
             if (!Directory.Exists(Terminal.usrs_dir + usrlogon))
             {
@@ -53,11 +49,6 @@ namespace Chocolate
             else if (Directory.Exists(Terminal.usrs_dir + usrlogon))
             {
                 Terminal.current_user = usrlogon;
-            }
-            else if (usrlogon == "default")
-            {
-                NewUser("default");
-                Terminal.current_user = "default";
             }
         }
         

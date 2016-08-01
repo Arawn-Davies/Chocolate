@@ -11,7 +11,7 @@ namespace CocoaShell
     class cpedit
     {
         public static string text = "";
-        public static string textSVG = "";
+        public static string savedtext = "";
         public static void Run(string file)
         {
             Console.WriteLine("--|:Welcome to Cocoapad Editor:|--");
@@ -32,12 +32,12 @@ namespace CocoaShell
                     if (notsaved == "y")
                     {
                         File.WriteAllText(Terminal.current_directory + file, text);
-                        textSVG = text;
-                        break;
+                        savedtext = text;
+                        Cocoashell.Run();
                     }
                     else if (notsaved == "n") 
                     {
-                        break;
+                        Cocoashell.Run();
                     }
                     else
                     {
@@ -47,8 +47,9 @@ namespace CocoaShell
                 }
                 if (line == "save")
                 {
-                    File.WriteAllText(Terminal.current_directory + file, text);
-                    cpedit.textSVG = cpedit.text;
+                    File.CreateText(Terminal.current_directory + @"\" + file);
+                    File.WriteAllText(Terminal.current_directory + @"\" + file, text);
+                    cpedit.savedtext = cpedit.text;
                     Cocoashell.Run();
                 }
                 cpedit.text = cpedit.text + (Environment.NewLine + line);

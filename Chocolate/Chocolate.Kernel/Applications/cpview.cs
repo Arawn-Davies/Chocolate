@@ -11,7 +11,7 @@ namespace CocoaShell
         public static void Run()
         {
             Console.WriteLine("Cocoapad Viewer\n");
-            Console.Write(cpedit.textSVG);
+            Console.Write(cpedit.savedtext);
             Console.CursorTop = Console.CursorTop + 1;
             Console.CursorLeft = 0;
         }

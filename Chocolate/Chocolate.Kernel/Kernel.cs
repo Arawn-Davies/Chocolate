@@ -30,48 +30,11 @@ ________________________________________
         protected override void BeforeRun()
         {
             Console.Clear();
-            AdvConsole.WriteEx("Welcome to\n" + osvars.oslogo, ConsoleColor.White, ConsoleColor.Blue, true, true);
             Console.CursorLeft = (Console.WindowWidth - osvars.oslogo.Length) / 2;
             Console.CursorTop = Console.WindowHeight / 2;
-            Console.Write(osvars.oslogo);
+            Console.Write("Welcome to " + osvars.oslogo);
             Console.WriteLine(osvars.osver + ", " + osvars.osname);
             Console.WriteLine("Press any key to continue!");
-        }
-        public static void FullInit()
-        {
-            if (osvars.livesession == false)
-            {
-                if (!Directory.Exists(osvars.confdir))
-                {
-                    Directory.CreateDirectory(osvars.confdir);
-                    Console.WriteLine("Your configuration directory is empty, run 'config' to create one if you wish");
-                }
-                else
-                {
-                    string[] lines = System.IO.File.ReadAllLines(osvars.confdir + @"/conf.txt");
-                    foreach (string line in lines)
-                    {
-                        if (line.StartsWith("sbgc "))
-                        {
-                            Applications.ColorChanger.ChangeBGC(line.Remove(0, 5));
-                        }
-                        else if (line.StartsWith("sfgc "))
-                        {
-                            Applications.ColorChanger.ChangeFGC(line.Remove(0, 5));
-                        }
-                        else if (line.StartsWith("echo "))
-                        {
-                            Console.WriteLine(line.Remove(0, 5));
-                        }
-
-                    }
-                }
-            }
-            else
-            {
-                Console.WriteLine("Chocolate is running live. Skipping config usage.");
-            }
-
         }
         protected override void Run()
         {

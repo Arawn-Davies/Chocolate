@@ -1,6 +1,16 @@
 # Chocolate
 
-##Welcome to Chocolate, a new operating system created by CaveSponge using the Cosmos Operating System toolkit.
+##Welcome to Chocolate, a new operating system created using the Cosmos Operating System toolkit.
+
+###FAQ
+
+Due to the current lack of LFN writing one can only use filenames with the texteditor
+that have 255 digits in the title and 3 letter extensions. 
+
+The text editor can currently view .TXT and .CCS files, .CCS being the extension for the shell scripting language.
+
+Once logged into the terminal use the command 'cocoashell' to launch cocoashell
+where you can then use 'help' to see the cocoashell specific commands.
 
 ###Currently Chocolate has the following:
 

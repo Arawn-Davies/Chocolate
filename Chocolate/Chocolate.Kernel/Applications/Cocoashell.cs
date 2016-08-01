@@ -50,10 +50,10 @@ namespace CocoaShell
                 cpview.Run();
             }
             
-            else if (cmd.StartsWith("cocoascript "))
+            else if (cmd.StartsWith("run "))
             {
                 isscript = true;
-                CocoaScript.Execute(cmd.Remove(0, 12));
+                CocoaScript.Execute(cmd.Remove(0, 4));
             }
             
             else if (cmd.StartsWith("echo "))

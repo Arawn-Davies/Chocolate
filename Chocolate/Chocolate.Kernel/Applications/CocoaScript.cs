@@ -13,7 +13,7 @@ namespace CocoaShell
     {
         public static void Execute(string scriptname)
         {
-            if (scriptname.EndsWith(".cscript"))
+            if (scriptname.EndsWith(".ccs"))
             {
                 string[] lines = File.ReadAllLines(Terminal.current_directory + scriptname);
                 foreach (string line in lines)

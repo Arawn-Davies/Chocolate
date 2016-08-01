@@ -17,6 +17,7 @@ namespace CocoaShell
             Console.WriteLine("--|:Welcome to Cocoapad Editor:|--");
             Console.WriteLine("Cocoapad is a multi line text editor you can use to create many files.");
             Console.WriteLine("Once you have finished you can type 'save' to save your file or 'end' to close without saving.");
+            Console.WriteLine("Filenames can only have 3 letter extensions.");
             text = "";
             string line;
             var num = 1;

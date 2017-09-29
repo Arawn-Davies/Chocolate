@@ -1,6 +1,6 @@
-# Chocolate
+# Chocolate OS
 
-##Welcome to Chocolate, a new operating system created using the Cosmos Operating System toolkit.
+##Welcome to Chocolate OS, a new operating system created using the Cosmos Operating System toolkit.
 
 ###FAQ
 
@@ -12,7 +12,7 @@ The text editor can currently view .TXT and .CCS files, .CCS being the extension
 Once logged into the terminal use the command 'cocoashell' to launch cocoashell
 where you can then use 'help' to see the cocoashell specific commands.
 
-You can visit http://github.com/CaveSponge/Cocoashell to see the Cocoashell source
+You can visit http://github.com/Arawn-Davies/Cocoashell to see the Cocoashell source
 
 ###Currently Chocolate has the following:
 

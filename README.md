@@ -1,8 +1,8 @@
 # Chocolate OS
 
-##Welcome to Chocolate OS, a new operating system created using the Cosmos Operating System toolkit.
+## Welcome to Chocolate OS, a new operating system created using the Cosmos Operating System toolkit.
 
-###FAQ
+### FAQ
 
 Due to the current lack of LFN writing one can only use filenames with the texteditor
 that have 255 digits in the title and 3 letter extensions. 
@@ -14,7 +14,7 @@ where you can then use 'help' to see the cocoashell specific commands.
 
 You can visit http://github.com/Arawn-Davies/Cocoashell to see the Cocoashell source
 
-###Currently Chocolate has the following:
+### Currently Chocolate has the following:
 
 Error Handling
 
@@ -29,6 +29,6 @@ Text Viewer
 Basic Shell Scripting
 
 
-###I am working on:
+### I am working on:
 
 Shell Scripting
